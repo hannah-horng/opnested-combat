@@ -65,12 +65,8 @@ def OPNestedComBat(dat, covars, batch_list, filepath, categorical_cols=None, con
             for j in range(len(output_df.columns)):
                 feature = output_df.iloc[:, j]
                 # print(j)
-                if ad:
-                    split_col = [feature[covars[batch_col] == i] for i in covars[batch_col].unique()]
-                    p_list.append(anderson_ksamp(split_col).significance_level)
-                else:
-                    p_list.append(ks_2samp(feature[covars[batch_col] == 0],
-                                           feature[covars[batch_col] == 1]).pvalue)
+                split_col = [feature[covars[batch_col] == i] for i in covars[batch_col].unique()]
+                p_list.append(anderson_ksamp(split_col).significance_level)
             count_dict[str(order)] += np.sum(np.asarray(p_list) < 0.05)
     if len(batch_list) != 1:
         best_order = [key for key, value in count_dict.items() if value == min(count_dict.values())][0]
