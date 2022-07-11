@@ -75,7 +75,7 @@ covars['GMM'] = gmm_df_merge['Grouping']
 categorical_cols = categorical_cols + ['GMM']
 
 # Completing Nested ComBat
-output_df = nested.OPNestedComBat(dat, covars, batch_list, filepath2, ad=True, categorical_cols=categorical_cols,
+output_df = nested.OPNestedComBat(dat, covars, batch_list, filepath2, categorical_cols=categorical_cols,
                                   continuous_cols=continuous_cols)
 write_df = pd.concat([caseno, output_df], axis=1) # write results fo file
 write_df.to_csv(filepath2+'/features_NestedComBat.csv')
