@@ -11,7 +11,7 @@ Uses Gaussian Mixture Modeling (GMM) to identify scan groupings associated with 
 Uses Gaussian Mixture Modeling (GMM) to identify scan groupings associated with hidden covariates to better address bimodal feature distributions. OPNested-GMM treats the GMM grouping as a clinical covariate for protection during harmonization.
 
 # Example
-To illustrate how to use the function file, an example with CAPTK features extracted from publicly available NSCLC-Radiogenomics dataset has been added.
+To illustrate how to use the function file, an example with CAPTK features extracted from the publicly available NSCLC-Radiogenomics dataset has been added.
 
 # Updates
 These methods are still a work in progress! Keep an eye out for future updates to the methods. 
